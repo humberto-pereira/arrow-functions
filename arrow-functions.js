@@ -13,7 +13,7 @@
 // let sum = addTwoNumbers(3, 5)
 // console.log(sum)
 
-// Arrow Function With Parameters
+// -----------------------------------Arrow Function With Parameters
 
 const addTwoNumbers = (a, b) => {
     // code block
@@ -46,6 +46,8 @@ const returnMultipleLines = () => ( // multiple lines strings require parenthese
 
 console.log(returnMultipleLines());
 
+// ------------------------------------SPREAD OPERATORS
+
 // No spread operators
 let arr1 = [1, 2, 3];
 let arr2 = arr1;
@@ -74,3 +76,30 @@ console.log('third obj', obj3);
 
 let arr5 = [... arr1, {...obj1}, ...arr3, 'x', 'Y', 'z'];
 console.log('fifth array', arr5);
+
+// ------------------------------------REST PARAMETER SYNTAX
+
+// Regular function call
+
+const sumAll = (a, b, c) => a + b + c;
+let sumRest = sumAll(1, 2, 3);
+console.log('Sum', sumRest);
+
+// extra arguments are ignored
+
+let sumRest2 = sumAll(1, 2, 3, 4, 5, 6);
+console.log('sumRest2', sumRest2)
+
+// Function using rest...
+
+const sumRest3 = (a, b, c, ...rest) => {
+    let sum = a + b + c;
+    for (let i of rest) {
+        sum += i;
+    }
+    return sum;
+}
+
+let sumRest3Result = sumRest3(1, 2, 3, 4, 5, 6);
+console.log('sumRest3', sumRest3Result);
+
